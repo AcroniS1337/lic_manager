@@ -1,0 +1,15 @@
+G:\курсача\lic_man\lic_man\bin\Debug\lic_man.exe.config
+G:\курсача\lic_man\lic_man\bin\Debug\lic_man.exe
+G:\курсача\lic_man\lic_man\bin\Debug\lic_man.pdb
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.csprojAssemblyReference.cache
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.Form1.resources
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.Properties.Resources.resources
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.Reg.resources
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.csproj.GenerateResource.cache
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.csproj.CoreCompileInputs.cache
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.exe
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.pdb
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.main_form.resources
+G:\курсача\lic_man\lic_man\bin\Debug\Newtonsoft.Json.dll
+G:\курсача\lic_man\lic_man\bin\Debug\Newtonsoft.Json.xml
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.csproj.CopyComplete
