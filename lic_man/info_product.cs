@@ -14,7 +14,7 @@ namespace lic_man
         public int id { get; set; }
 
         public bool status = false;
-        public int count_lic { get; set; }
-        public int buy_key_count { get; set; }
+        public int  version { get; set; }
+        public int license_count { get; set; }
     }
 }

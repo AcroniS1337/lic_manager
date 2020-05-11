@@ -38,6 +38,12 @@ namespace lic_man
 
         private void button1_Click(object sender, EventArgs e) // auto
         {
+            if (this.textBox1.Text == "" || this.textBox2.Text == "")
+            {
+                MessageBox.Show("Логин или пароль не заполнен");
+                return;
+            }
+
             main_Form.Show();
             this.Hide();
         }

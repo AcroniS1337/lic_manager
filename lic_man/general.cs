@@ -37,7 +37,7 @@ namespace lic_man
 
                 info_product account = JsonConvert.DeserializeObject<info_product>(textFromFile);
 
-                MessageBox.Show(account.count_lic.ToString());
+                MessageBox.Show(account.version.ToString());
             }
 
 

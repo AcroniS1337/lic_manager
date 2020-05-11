@@ -26,5 +26,12 @@ namespace lic_man
             general.save_product(file);
             general.load_product(file);
         }
+
+        private void добавитьПродуктToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            add_product test = new add_product();
+
+            test.Show();
+        }
     }
 }

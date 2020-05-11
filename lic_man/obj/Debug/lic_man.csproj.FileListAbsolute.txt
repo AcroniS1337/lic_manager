@@ -13,3 +13,4 @@ G:\курсача\lic_man\lic_man\obj\Debug\lic_man.main_form.resources
 G:\курсача\lic_man\lic_man\bin\Debug\Newtonsoft.Json.dll
 G:\курсача\lic_man\lic_man\bin\Debug\Newtonsoft.Json.xml
 G:\курсача\lic_man\lic_man\obj\Debug\lic_man.csproj.CopyComplete
+G:\курсача\lic_man\lic_man\obj\Debug\lic_man.add_product.resources
