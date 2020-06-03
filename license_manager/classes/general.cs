@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace license_manager.classes
 {
-    public class general : info_product
+    public class general
     {
         public string name_pc_set = System.Net.Dns.GetHostName();
 

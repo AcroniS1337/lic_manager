@@ -42,7 +42,7 @@ namespace license_manager.UI
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             general_form main_form = new general_form();
-            Program.log_info.log_add_autorization(materialSingleLineTextField1.Text, DateTime.Now);
+            Program.log_info.log_registration(materialSingleLineTextField1.Text, DateTime.Now,"Авторизовался");
             main_form.Show();
             this.Hide();
         }

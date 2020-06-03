@@ -11,8 +11,6 @@ namespace license_manager.classes
     {
         public string login { get; set; }
         public string password { get; set; }
-        public string name_pc { get; set; }
-
 
         public void save_data()
         {
@@ -20,7 +18,6 @@ namespace license_manager.classes
             RegistryKey helloKey = currentUserKey.CreateSubKey("Lic_manager");
             helloKey.SetValue("login", this.login);
             helloKey.SetValue("password", this.password);
-            helloKey.SetValue("pc_name", this.name_pc);
             helloKey.Close();
         }
 

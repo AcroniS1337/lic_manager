@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -27,7 +28,7 @@ namespace license_manager.UI
         private void materialRaisedButton1_Click(object sender, EventArgs e)
         {
             general_form.edit_user(Program.product_info.id, materialSingleLineTextField1.Text, materialSingleLineTextField2.Text, materialSingleLineTextField3.Text, materialSingleLineTextField4.Text, materialSingleLineTextField7.Text,dateTimePicker1.Value, materialSingleLineTextField5.Text, materialSingleLineTextField6.Text);
-            Program.log_info.log_add_edit_user_product(materialSingleLineTextField2.Text, materialSingleLineTextField1.Text, DateTime.Now);
+            Program.log_info.log_user_product(materialSingleLineTextField2.Text, materialSingleLineTextField1.Text, DateTime.Now,"Изменил");
             Program.general.save_file(general_form.instance.listView1, "user_product.ini");
         }
 
@@ -37,6 +38,23 @@ namespace license_manager.UI
                 materialSingleLineTextField6.Text = "Да";
             else
                 materialSingleLineTextField6.Text = "Нет";
+        }
+
+        private void materialSingleLineTextField5_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) & (e.KeyChar != ',') & (e.KeyChar != (char)Keys.Back))  // lock
+                e.Handled = true;
+        }
+
+        private void materialSingleLineTextField5_TextChanged(object sender, EventArgs e)
+        {
+            var size = materialSingleLineTextField2.Text.Length.ToString(CultureInfo.InvariantCulture);
+
+            if (Convert.ToInt32(size) > 7)
+            {
+                MessageBox.Show("Максимальная длина 7 символов");
+                return;
+            }
         }
     }
 }

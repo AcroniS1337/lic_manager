@@ -194,6 +194,8 @@
             this.materialSingleLineTextField5.Size = new System.Drawing.Size(193, 23);
             this.materialSingleLineTextField5.TabIndex = 10;
             this.materialSingleLineTextField5.UseSystemPasswordChar = false;
+            this.materialSingleLineTextField5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.materialSingleLineTextField5_KeyPress);
+            this.materialSingleLineTextField5.TextChanged += new System.EventHandler(this.materialSingleLineTextField5_TextChanged);
             // 
             // materialLabel6
             // 

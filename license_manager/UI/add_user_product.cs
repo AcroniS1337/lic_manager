@@ -47,8 +47,9 @@ namespace license_manager.UI
                 listViewItem.SubItems.Add(comboBox2.Text);
                 listViewItem.SubItems.Add(dateTimePicker1.Value > DateTime.Now ? "Да" : "Нет");
                 general_form.add_user(listViewItem);
-                Program.log_info.log_add_add_user_product(materialSingleLineTextField1.Text, comboBox1.Text, DateTime.Now);
+                Program.log_info.log_user_product(materialSingleLineTextField1.Text, comboBox1.Text, DateTime.Now,"Добавил");
                Program.general.save_file(general_form.instance.listView1, "user_product.ini");
+                general_form.instance.user_load();
             }
         }
 

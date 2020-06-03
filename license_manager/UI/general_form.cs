@@ -27,8 +27,9 @@ namespace license_manager.UI
             instance = this;
             user_load();
         }
-        private void user_load()
+        public void user_load()
         {
+            listView1.Items.Clear();
             bool found_file = false;
 
             FileInfo fileInf = new FileInfo("user_product.ini");
@@ -60,8 +61,13 @@ namespace license_manager.UI
                     listViewItem.SubItems.Add(splite6);
                     listViewItem.SubItems.Add(splite7);
                     listViewItem.SubItems.Add(DateTime.Now > Convert.ToDateTime(splite6) ? "Истекла" : splite8);
-
-                    listView1.Items.Add(listViewItem);
+                   
+                        listView1.Items.Add(listViewItem);
+                    
+                    if (!comboBox1.Items.Cast<string>().Contains(listViewItem.SubItems[0].Text))
+                    {
+                        comboBox1.Items.Add(listViewItem.SubItems[0].Text);
+                    }
                 }
                 sr.Close();
             }
@@ -106,7 +112,7 @@ namespace license_manager.UI
             {
                 if (listView1.Items[i].Selected)
                 {
-                    Program.log_info.log_add_delete_user_product(listView1.FocusedItem.SubItems[1].Text, listView1.FocusedItem.SubItems[0].Text, DateTime.Now);
+                    Program.log_info.log_user_product(listView1.FocusedItem.SubItems[1].Text, listView1.FocusedItem.SubItems[0].Text, DateTime.Now,"Удалил");
                     listView1.Items[i].Remove();
                 }
             }           
@@ -141,6 +147,73 @@ namespace license_manager.UI
         {
             log_show log_open = new log_show();
             log_open.ShowDialog();
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            user_load();
+            if (textBox1.Text != "")
+                {
+                    for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                    {
+                    var item = listView1.Items[i];
+                        if (item.SubItems[0].Text.IndexOf(textBox1.Text, StringComparison.OrdinalIgnoreCase) >= 0
+                        || item.SubItems[1].Text.IndexOf(textBox1.Text, StringComparison.OrdinalIgnoreCase) >= 0
+                         || item.SubItems[2].Text.IndexOf(textBox1.Text, StringComparison.OrdinalIgnoreCase) >= 0
+                          || item.SubItems[3].Text.IndexOf(textBox1.Text, StringComparison.OrdinalIgnoreCase) >= 0
+                     || item.SubItems[4].Text.IndexOf(textBox1.Text, StringComparison.OrdinalIgnoreCase) >= 0
+                 || item.SubItems[5].Text.IndexOf(textBox1.Text, StringComparison.OrdinalIgnoreCase) >= 0
+                 || item.SubItems[6].Text.IndexOf(textBox1.Text, StringComparison.OrdinalIgnoreCase) >= 0
+                 || item.SubItems[7].Text.IndexOf(textBox1.Text, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {                       
+                    }
+                        else
+                        {
+                        listView1.Items.Remove(item);
+                    }
+                    }
+                    if (listView1.SelectedItems.Count == 1)
+                    {
+                        listView1.Focus();
+                    }
+            }
+           if(textBox1.Text == "")
+            {
+                user_load();
+            }
+        }
+
+        private void comboBox1_TextChanged(object sender, EventArgs e)
+        {
+            user_load();
+            if (comboBox1.Text != "" || comboBox1.Text != "None")
+            {
+                for (int i = listView1.Items.Count - 1; i >= 0; i--)
+                {
+                    var item = listView1.Items[i];
+                    if (item.Text.IndexOf(comboBox1.Text, StringComparison.OrdinalIgnoreCase) >= 0)
+                    {
+
+                    }
+                    else
+                    {
+                        listView1.Items.Remove(item);
+                    }
+                }
+                if (listView1.SelectedItems.Count == 1)
+                {
+                    listView1.Focus();
+                }
+            }
+            if (comboBox1.Text == "" || comboBox1.Text == "None")
+            {
+                user_load();
+            }
+        }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            listView1.FullRowSelect = true;
         }
     }
 }

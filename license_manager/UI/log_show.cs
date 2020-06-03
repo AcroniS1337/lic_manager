@@ -33,5 +33,10 @@ namespace license_manager.UI
         {
             log_show.instance.listView1.Items.Add(log);
         }
+
+        private void listView1_MouseClick(object sender, MouseEventArgs e)
+        {
+            listView1.FullRowSelect = true;
+        }
     }
 }

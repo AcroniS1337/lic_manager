@@ -34,11 +34,10 @@ namespace license_manager.UI
 
             Program.login_data.login = this.materialSingleLineTextField1.Text;
             Program.login_data.password = this.materialSingleLineTextField2.Text;
-            Program.login_data.name_pc = "1337";
 
             Program.login_data.save_data();
             autorization.add_info(this.materialSingleLineTextField1.Text, this.materialSingleLineTextField2.Text);
-            Program.log_info.log_add_registration(this.materialSingleLineTextField1.Text, DateTime.Now);
+            Program.log_info.log_registration(this.materialSingleLineTextField1.Text, DateTime.Now,"Зарегистрировался");
             this.Close();
         }
     }

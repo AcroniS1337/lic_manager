@@ -42,22 +42,23 @@
             this.columnHeader3});
             this.listView1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(119, 63);
+            this.listView1.Location = new System.Drawing.Point(85, 63);
             this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(600, 388);
+            this.listView1.Size = new System.Drawing.Size(635, 388);
             this.listView1.TabIndex = 0;
             this.listView1.UseCompatibleStateImageBehavior = false;
             this.listView1.View = System.Windows.Forms.View.Details;
+            this.listView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.listView1_MouseClick);
             // 
             // columnHeader1
             // 
             this.columnHeader1.Text = "Имя пользователя";
-            this.columnHeader1.Width = 131;
+            this.columnHeader1.Width = 161;
             // 
             // columnHeader2
             // 
             this.columnHeader2.Text = "Действие";
-            this.columnHeader2.Width = 276;
+            this.columnHeader2.Width = 274;
             // 
             // columnHeader3
             // 

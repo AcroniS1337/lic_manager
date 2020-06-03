@@ -42,106 +42,38 @@ namespace license_manager.classes
             }
         }
 
-        public void log_add_delete_product(string name_product,DateTime time)
+        public void log_product(string name_product,DateTime time,string action)
         {
             log_show log_open = new log_show();
 
             ListViewItem listViewItem = new ListViewItem();
 
             listViewItem.SubItems[0].Text = Program.login_data.login;
-            listViewItem.SubItems.Add($"Удалил продукт {name_product}");
+            listViewItem.SubItems.Add($"{action} продукт {name_product}");
             listViewItem.SubItems.Add($"В {time}");
             log_show.add_log_delete(listViewItem);
             Program.general.save_file(log_show.instance.listView1, "log_users.ini");
         }
-
-        public void log_add_add_product(string name_product, DateTime time)
+        public void log_user_product(string name_user,string name_product, DateTime time,string action)
         {
             log_show log_open = new log_show();
 
             ListViewItem listViewItem = new ListViewItem();
 
             listViewItem.SubItems[0].Text = Program.login_data.login;
-            listViewItem.SubItems.Add($"Добавил продукт {name_product}");
+            listViewItem.SubItems.Add($"{action} пользователя {name_user} продукта {name_product}");
             listViewItem.SubItems.Add($"В {time}");
             log_show.add_log_delete(listViewItem);
             Program.general.save_file(log_show.instance.listView1, "log_users.ini");
         }
-
-        public void log_add_edit_product(string name_product, DateTime time)
+        public void log_registration(string name_user, DateTime time,string action)
         {
             log_show log_open = new log_show();
 
             ListViewItem listViewItem = new ListViewItem();
 
             listViewItem.SubItems[0].Text = Program.login_data.login;
-            listViewItem.SubItems.Add($"Изменил продукт {name_product}");
-            listViewItem.SubItems.Add($"В {time}");
-            log_show.add_log_delete(listViewItem);
-            Program.general.save_file(log_show.instance.listView1, "log_users.ini");
-        }
-
-
-        public void log_add_add_user_product(string name_user,string name_product, DateTime time)
-        {
-            log_show log_open = new log_show();
-
-            ListViewItem listViewItem = new ListViewItem();
-
-            listViewItem.SubItems[0].Text = Program.login_data.login;
-            listViewItem.SubItems.Add($"Добавил пользователя {name_user} продукта {name_product}");
-            listViewItem.SubItems.Add($"В {time}");
-            log_show.add_log_delete(listViewItem);
-            Program.general.save_file(log_show.instance.listView1, "log_users.ini");
-        }
-
-        public void log_add_delete_user_product(string name_user, string name_product, DateTime time)
-        {
-            log_show log_open = new log_show();
-
-            ListViewItem listViewItem = new ListViewItem();
-
-            listViewItem.SubItems[0].Text = Program.login_data.login;
-            listViewItem.SubItems.Add($"Удалил пользователя {name_user} продукта {name_product}");
-            listViewItem.SubItems.Add($"В {time}");
-            log_show.add_log_delete(listViewItem);
-            Program.general.save_file(log_show.instance.listView1, "log_users.ini");
-        }
-
-        public void log_add_edit_user_product(string name_user, string name_product, DateTime time)
-        {
-            log_show log_open = new log_show();
-
-            ListViewItem listViewItem = new ListViewItem();
-
-            listViewItem.SubItems[0].Text = Program.login_data.login;
-            listViewItem.SubItems.Add($"Изменил пользователя {name_user} продукта {name_product}");
-            listViewItem.SubItems.Add($"В {time}");
-            log_show.add_log_delete(listViewItem);
-            Program.general.save_file(log_show.instance.listView1, "log_users.ini");
-        }
-
-        public void log_add_registration(string name_user, DateTime time)
-        {
-            log_show log_open = new log_show();
-
-            ListViewItem listViewItem = new ListViewItem();
-
-            listViewItem.SubItems[0].Text = Program.login_data.login;
-            listViewItem.SubItems.Add($"Зарегистрировался пользователь с ником {name_user}");
-            listViewItem.SubItems.Add($"В {time}");
-            log_show.add_log_delete(listViewItem);
-            Program.general.save_file(log_show.instance.listView1, "log_users.ini");
-        }
-
-        public void log_add_autorization(string name_user, DateTime time)
-        {
-            log_show log_open = new log_show();
-
-            ListViewItem listViewItem = new ListViewItem();
-
-            listViewItem.SubItems[0].Text = Program.login_data.login;
-            listViewItem.SubItems.Add($"Авторизовался пользователь с ником {name_user}");
+            listViewItem.SubItems.Add($"{action} пользователь с ником {name_user}");
             listViewItem.SubItems.Add($"В {time}");
             log_show.add_log_delete(listViewItem);
             Program.general.save_file(log_show.instance.listView1, "log_users.ini");
